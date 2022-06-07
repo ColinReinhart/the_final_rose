@@ -1,1 +1,7 @@
 <%= @outing.name %>
+<%= @outing.location %>
+<%= @outing.date %>
+Count of Contestants: <%= @outing.contestants.count %>
+Contestants: <% @outing.contestants.each do |cont| %>
+<%= cont.name %>
+<% end %>

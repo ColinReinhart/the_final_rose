@@ -1,0 +1,5 @@
+<%= @bach.contestants.each do |cont|%>
+<%= link_to cont.name, "/contestants/#{cont.id}" %>
+<%= cont.age %>
+<%= cont.hometown %>
+<% end %>

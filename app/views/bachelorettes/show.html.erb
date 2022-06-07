@@ -1,5 +1,5 @@
 <h1> <%= @bachelorette.name %> </h1>
 
-Season <%= @bachelorette.season_number %> - The Most Dramatic Season Yet!
+Season <%= @bachelorette.season_number %> - <%= @bachelorette.description %>
 
 <%= link_to "Bachelorette's Contestants", "/bachelorettes/#{@bachelorette.id}/contestants" %>

@@ -1,0 +1,5 @@
+<%= @cont.name %>
+Season <%= @cont.bachelorette.season_number %> - <%= @cont.bachelorette.description %>
+Outings: <%= @cont.outings.each do |outing| %>
+<%= link_to "#{outing.name}", outing_path(outing) %>
+<% end %>

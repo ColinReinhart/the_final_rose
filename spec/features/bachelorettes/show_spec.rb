@@ -7,7 +7,7 @@ RSpec.describe 'Bachelorette show' do
 
     @reinhart = Contestant.create!(name: "Colin Reinhart", age: 33, hometown: "Denver", bachelorette_id: @brown.id)
     @wilkins = Contestant.create!(name: "Stephen Wilkins", age: 26, hometown: "Los Angeles", bachelorette_id: @brown.id)
-    @haines = Contestant.create!(name: "Thomas Haines", age: 25, hometown: "San Francisco", bachelorette_id: @brown.id)
+    @haines = Contestant.create!(name: "Thomas Haines", age: 26, hometown: "San Francisco", bachelorette_id: @brown.id)
     @king = Contestant.create!(name: "Andrew King", age: 24, hometown: "Philidelphia", bachelorette_id: @brown.id)
     @bethune = Contestant.create!(name: "Cory Bethune", age: 27, hometown: "Vancouver", bachelorette_id: @white.id)
   end
@@ -32,6 +32,12 @@ RSpec.describe 'Bachelorette show' do
     expect(page).to have_content("Andrew King")
     expect(page).to_not have_content("Cory Bethune")
 
+  end
+
+  it "shows the average age of contestants" do
+    visit bachelorette_path(@brown)
+
+    expect(page).to have_content("Average Age of Contestants: 27.25")
   end
 
 end
